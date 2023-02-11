@@ -3,35 +3,42 @@ import Collections.*;
 public class Test {
     public static void main(String[] args) {
         // MyArrayList
-        MyArrayList myArrayList = new MyArrayList();
-        myArrayList.add(2424);
-        myArrayList.add(34422414);
+        MyArrayList<Integer> myArrayList = new MyArrayList<>();
+        myArrayList.add(3);
+        myArrayList.add(233);
+        myArrayList.add(53);
+        myArrayList.add(317);
         System.out.println("myArrayList = " + myArrayList);
-        myArrayList.remove(0);
-        System.out.println("myArrayList = " + myArrayList + "\n");
+        System.out.println("myArrayList.size() = " + myArrayList.size());
+        myArrayList.remove(3);
+        System.out.println("myArrayList = " + myArrayList);
+        System.out.println("myArrayList.size() = " + myArrayList.size());
         myArrayList.clear();
+        System.out.println("myArrayList = " + myArrayList);
+        System.out.println("myArrayList.size() = " + myArrayList.size() + "\n");
 
-        // MyLinkedList
+//        // MyLinkedList
         MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
         myLinkedList.add(2424);
         System.out.println("myLinkedList = " + myLinkedList);
         System.out.println("myLinkedList.get(0) = " + myLinkedList.get(0) + "\n");
         myLinkedList.clear();
 
-        // MyStack
-        MyStack myStack = new MyStack();
-        myStack.add(403);
-        myStack.add(2);
-        myStack.add(13);
-        myStack.add("fs");
+//        // MyStack
+        MyStack<Integer> myStack = new MyStack<>();
+        myStack.push(403);
+        myStack.push(2);
+        myStack.push(13);
         System.out.println("myStack = " + myStack);
         System.out.println("myStack.pop() = " + myStack.pop());
         System.out.println("myStack = " + myStack);
         System.out.println("myStack.peek() = " + myStack.peek());
-        System.out.println("myStack = " + myStack + "\n");
+        System.out.println("myStack = " + myStack);
+        myStack.remove(1);
+        System.out.println("myStack removed index elem 1 = " + myStack + "\n");
 
-        // MyQueue
-        MyQueue myQueue = new MyQueue();
+//        // MyQueue
+        MyQueue<String> myQueue = new MyQueue<>();
         myQueue.add("fd24f");
         myQueue.add("Dima");
         myQueue.add("jdf");
@@ -39,16 +46,18 @@ public class Test {
         System.out.println("myQueue = " + myQueue);
         System.out.println("myQueue.poll() = " + myQueue.poll());
         System.out.println("myQueue = " + myQueue);
-        System.out.println("myQueue.peek() = " + myQueue.peek() + "\n");
+        System.out.println("myQueue.peek() = " + myQueue.peek());
+        System.out.println("myQueue = " + myQueue + "\n");
 
 
-        // MyHashMap
+//        // MyHashMap
         MyHashMap<String, Integer> myHashMap = new MyHashMap<>();
         myHashMap.put("Junior", 600);
+        myHashMap.put("Junior", 6000);
         myHashMap.put("Middle", 2000);
         myHashMap.put("Senior", 3400);
-        System.out.println("myHashMap = " + myHashMap);
-        System.out.println("myHashMap.get(\"Junior\") = " + myHashMap.get("Junior"));
-
+        myHashMap.remove("Junior");
+        System.out.println("myHashMap.size() = " + myHashMap.size());
+        System.out.println(myHashMap);
     }
 }

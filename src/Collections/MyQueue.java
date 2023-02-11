@@ -2,30 +2,30 @@ package Collections;
 
 import java.util.Arrays;
 
-public class MyQueue {
+public class MyQueue<E> {
     private int sizeList = 0;
-    private Object[] array = new Object[0];
-    public void add(Object value) {
+    private E[] array = (E[]) new Object[sizeList];
+    public void add(E value) {
         sizeList++;
         this.array = Arrays.copyOf(this.array, this.sizeList);
         this.array[this.sizeList - 1] = value;
     }
 
     public void clear() {
-        this.array = new Object[0];
-        sizeList = 0;
+        this.array = (E[]) new Object[0];
+        this.sizeList = 0;
     }
 
     public int size() {
         return sizeList;
     }
 
-    public Object peek() {
+    public E peek() {
         return array[0];
     }
 
-    public Object poll() {
-        Object firstElem = array[0];
+    public E poll() {
+        E firstElem = array[0];
         this.sizeList--;
 
         for(int i = 0; i < this.sizeList; ++i) {

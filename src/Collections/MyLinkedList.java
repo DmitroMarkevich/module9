@@ -89,7 +89,7 @@ public class MyLinkedList<E> {
             res.add(node.toString());
             node =  node.getNextElement();
         }
-        return "[" + res.toString() + "]";
+        return "[" + res + "]";
     }
 
 

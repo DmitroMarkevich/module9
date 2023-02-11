@@ -28,8 +28,7 @@ public class MyHashMap <K, V> {
 
         Node<K, V> node = firstNode;
         while (node != null){
-
-            if (node.getNextNode()==null) return null;
+            if (node.getNextNode() == null) return null;
 
             if(node.getNextNode().equals(searchNode)) return node;
             node = node.getNextNode();
@@ -46,14 +45,16 @@ public class MyHashMap <K, V> {
             else lastNode.setNextNode(node);
             lastNode = node; size++;
         }
+        else if(getNodeByKey(key).key.equals(key)) {
+            getNodeByKey(key).value = value;
+        }
     }
 
     public void remove(K key) {
         if (size == 0) return;
 
-        if (size==1){
-            setNullFirstLastNodes();
-            return;
+        if (size == 1) {
+            setNullFirstLastNodes(); return;
         }
 
         Node<K, V> findNode = getNodeByKey(key);
@@ -61,7 +62,7 @@ public class MyHashMap <K, V> {
 
         Node<K, V> prevNode = getNodeByNext(findNode);
 
-        if (prevNode==null) firstNode = findNode.getNextNode();
+        if (prevNode == null) firstNode = findNode.getNextNode();
         else if (findNode.getNextNode() == null){
             prevNode.setNextNode(null);
             lastNode = prevNode;
@@ -71,7 +72,7 @@ public class MyHashMap <K, V> {
     }
 
     public void clear() {
-        if (size==0) return;
+        if (size == 0) return;
 
         Node<K, V> currentNode = firstNode;
 
@@ -93,8 +94,6 @@ public class MyHashMap <K, V> {
         return node.getValue();
 
     }
-
-
     @Override
     public String toString() {
         if (size == 0) return "[]";
@@ -109,7 +108,6 @@ public class MyHashMap <K, V> {
         }
         return res.toString();
     }
-
 
     private static class Node<K, V> {
         final int hash;
