@@ -17,14 +17,14 @@ public class Test {
         System.out.println("myArrayList = " + myArrayList);
         System.out.println("myArrayList.size() = " + myArrayList.size() + "\n");
 
-//        // MyLinkedList
+        // MyLinkedList
         MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
         myLinkedList.add(2424);
         System.out.println("myLinkedList = " + myLinkedList);
         System.out.println("myLinkedList.get(0) = " + myLinkedList.get(0) + "\n");
         myLinkedList.clear();
 
-//        // MyStack
+        // MyStack
         MyStack<Integer> myStack = new MyStack<>();
         myStack.push(403);
         myStack.push(2);
@@ -37,7 +37,7 @@ public class Test {
         myStack.remove(1);
         System.out.println("myStack removed index elem 1 = " + myStack + "\n");
 
-//        // MyQueue
+        // MyQueue
         MyQueue<String> myQueue = new MyQueue<>();
         myQueue.add("fd24f");
         myQueue.add("Dima");
@@ -50,7 +50,7 @@ public class Test {
         System.out.println("myQueue = " + myQueue + "\n");
 
 
-//        // MyHashMap
+        // MyHashMap
         MyHashMap<String, Integer> myHashMap = new MyHashMap<>();
         myHashMap.put("Junior", 600);
         myHashMap.put("Junior", 6000);
